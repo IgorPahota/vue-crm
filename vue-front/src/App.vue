@@ -3,7 +3,6 @@
     <component :is="layout">
       <router-view/>
     </component>
-    <button class="btn btn-dark">test</button>
   </div>
 </template>
 
