@@ -4,7 +4,9 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import 'bootstrap';
+// import 'bootstrap';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import 'materialize-css';
 
 Vue.config.productionTip = false;
 
