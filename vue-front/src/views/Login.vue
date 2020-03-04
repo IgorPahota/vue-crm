@@ -24,10 +24,18 @@
         <input
           id="password"
           type="password"
-          class="validate"
+          v-model.trim="password"
+          :class="{invalid: ($v.password.$dirty && !$v.password.required) ||
+          ($v.password.$dirty && !$v.password.minLength)}"
         >
         <label for="password">Пароль</label>
-        <small class="helper-text invalid">Password</small>
+        <small class="helper-text invalid"
+        v-if="$v.password.$dirty && !$v.password.required"
+        >Введите пароль</small>
+        <small class="helper-text invalid"
+               v-else-if="$v.password.$dirty && !$v.password.minLength"
+        >Пароль должен быть не менее 6
+          символов, сейчас он {{password.length}}</small>
       </div>
     </div>
     <div class="card-action">
@@ -66,7 +74,6 @@ export default {
 
   methods: {
     submitHandler() {
-      // console.log(this.$v.password.$params);
       if (this.$v.$invalid) {
         this.$v.$touch();
         return;
