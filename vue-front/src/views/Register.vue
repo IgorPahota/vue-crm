@@ -103,16 +103,14 @@
           password: this.password,
           name: this.name
         };
-        console.log(formData);
     try {
       await this.$store.dispatch('register', formData);
+      await this.$router.push('/');
 
     } catch (e) {
 
     }
-
-        await this.$router.push('/');
-      },
+     },
     },
   }
 </script>
