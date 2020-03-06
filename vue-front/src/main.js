@@ -7,6 +7,7 @@ import './registerServiceWorker';
 import router from './router';
 import store from './store';
 import 'materialize-css';
+import 'bootstrap'
 import dateFilter from './filters/date.filter';
 import messagePlugin from './utils/message.plugin'
 

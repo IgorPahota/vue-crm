@@ -1,12 +1,14 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import auth from './auth'
+import info from './info'
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    error: null
+    error: null,
+    data: '123'
   },
   mutations: {
     setError(state, error) {
@@ -22,6 +24,7 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
-    auth
+    auth,
+    info
   },
 });
